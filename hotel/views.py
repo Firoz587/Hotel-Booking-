@@ -21,8 +21,6 @@ class HotelImagesViewset(viewsets.ModelViewSet):
 class HotelViewset(viewsets.ModelViewSet):
     queryset = models.Hotel.objects.all()
     serializer_class = serializers.HotelSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['hotel_name', 'hotel_price', 'amenity_name']
     
 class ReviewViewset(viewsets.ModelViewSet):
     queryset = models.Review.objects.all()
