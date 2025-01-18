@@ -18,15 +18,9 @@ class HotelImagesViewset(viewsets.ModelViewSet):
     queryset = models.HotelImages.objects.all()
     serializer_class = serializers.HotelImagesSerializer
 
-class HotelPagination(pagination.PageNumberPagination):
-    page_size = 1
-    page_size_query_param = page_size
-    max_page_size = 100
-    
 class HotelViewset(viewsets.ModelViewSet):
     queryset = models.Hotel.objects.all()
     serializer_class = serializers.HotelSerializer
-    pagination_class = HotelPagination
     filter_backends = [filters.SearchFilter]
     search_fields = ['hotel_name', 'hotel_price', 'amenity_name']
     
