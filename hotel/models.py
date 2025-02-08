@@ -19,6 +19,7 @@ class Amenities(BaseModel):
     def __str__(self) -> str:
         return self.amenity_name
 class Hotel(BaseModel):
+    image = models.ImageField(upload_to="hotels", default='default_image.jpg')
     hotel_name= models.CharField(max_length=100)
     hotel_price = models.IntegerField()
     description = models.TextField()

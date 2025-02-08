@@ -2,7 +2,7 @@ from rest_framework import serializers
 from . import models
 
 class HotelSerializer(serializers.ModelSerializer):
-    
+    amenities = serializers.StringRelatedField(many=True)
     class Meta:
         model = models.Hotel
         fields = '__all__'
